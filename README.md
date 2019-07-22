@@ -38,3 +38,36 @@ Declaração do Imposto de Renda de Pessoa Física
 
 
 ## DOI
+
+Declaração sobre Operações Imobiliárias
+
+### Como o programa funciona:
+1. Lê a pasta de entrada, definida por dirIn, buscando todos os arquivos “.pdf”
+2. Identifica se o documento recebido é uma DOI, buscando o termo: “Declaração sobre Operações Imobiliárias”
+3. Grava a saída na pasta de saída, definida por dirOut, com extensão “.txt” mas no formato CSV.
+
+### dados recuperados e gravados:
+
+1. Identificação do Cartório
+    - Complemento e Bairro estão agrupados
+
+2. Identificação da Operação
+    - Livro e Folha estão agrupados
+    - Registro e Situação estão agrupados
+    - Matricula - Quando estiver em branco ou com zeros grava-se “ND” Número de Controle
+
+3. Identificação dos Alienantes
+    - Participação - Quando estiver em branco arbitrar percentual igual para todas listados
+    - Inferido - Indica se o valor de participação foi inferido ou não. S-Inferido N-Informado
+
+4. Identificação dos Adquirentes
+    - Participação - Quando estiver em branco arbitrar percentual igual para todas listados
+    - Inferido - Indica se o valor de participação foi inferido ou não. S-Inferido N-Informado
+
+5. Informações sobre a Alienação
+    - Valor Alienação - Quando não estiver preenchido com números, utilizar o valor Base_Calculo
+    - Inferido - Indica se o Valor Alienação foi inferido ou não. S-Inferido, N-Informado
+
+6. Informações sobre o Imóvel
+    - Gravado sem qualquer tratameto
+    
